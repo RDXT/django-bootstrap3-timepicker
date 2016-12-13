@@ -8,14 +8,14 @@ register = template.Library()
 
 
 @register.simple_tag
-def b3datepicker_css():
+def b3timepicker_css():
     css_template = u'<link rel="stylesheet" href="{}" type="text/css" charset="utf-8">'
-    css = css_template.format(settings.B3DATEPICKER_CSS)
+    css = css_template.format(settings.B3TIMEPICKER_CSS)
     return mark_safe(css)
 
 
 @register.simple_tag()
-def b3datepicker_js():
+def b3timepicker_js():
     js_template = u'<script src="{}" type="text/javascript" charset="utf-8"></script>'
-    js = js_template.format(settings.B3DATEPICKER_JS)
+    js = js_template.format(settings.B3TIMEPICKER_JS)
     return mark_safe(js)
