@@ -42,8 +42,10 @@ class B3timepickerMixin(object):
         super(B3timepickerMixin, self).__init__(attrs)
 
     def render(self, name, value, attrs=None):
+        attrs["type"] = self.input_type
+        attrs["name"] = name
         attrs["data-provide"] = "timepicker"
-        final_attrs = self.build_attrs(attrs, type=self.input_type, name=name)
+        final_attrs = self.build_attrs(attrs)
         rendered = super(B3timepickerMixin, self).render(name, value, final_attrs)
         if not self.component_view:
             return format_html(WITHOUT_COMPONENT_TEMPLATE, rendered)
